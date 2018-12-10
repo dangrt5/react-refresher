@@ -1,9 +1,7 @@
 import React from "react";
 
-class Header extends React.Component {
-    render() {
-        return (
-            <header className="top">
+const Header = ({tagline}) => (
+    <header className="top">
                 <h1>
                     Catch 
                     <span className="ofThe">
@@ -13,11 +11,8 @@ class Header extends React.Component {
                     Day
                 </h1>
                 <h3 className="tagline">
-                    <span>Fresh Seafood Market</span>
+                    <span>{tagline}</span>
                 </h3>
             </header>
-        )
-    }
-}
-
+)
 export default Header;
