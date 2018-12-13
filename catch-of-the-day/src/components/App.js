@@ -34,9 +34,7 @@ class App extends React.Component {
 
   componentDidUpdate() {
     const { storeId } = this.props.match.params;
-    console.log("Store ID", storeId);
     localStorage.setItem(storeId, JSON.stringify(this.state.order));
-    console.log("LOcal stoage", localStorage);
   }
 
   addFish = fish => {
