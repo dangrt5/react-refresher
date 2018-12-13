@@ -7,10 +7,12 @@ class Order extends React.Component {
     const count = this.props.order[key];
     const isAvailable = fish.status === "available";
     if (!isAvailable) {
-      <li>Sorry {fish ? fish.name : "fish"} is no longer available.</li>;
+      <li key={key}>
+        Sorry {fish ? fish.name : "fish"} is no longer available.
+      </li>;
     }
     return (
-      <li>
+      <li key={key}>
         {count} lbs {fish.name}
         {formatPrice(count * fish.price)}
       </li>
@@ -31,7 +33,7 @@ class Order extends React.Component {
     return (
       <div className="order-wrap">
         <h2>Order</h2>
-        <ul>{orderIDs.map(this.renderOrder)}</ul>
+        <ul className="order">{orderIDs.map(this.renderOrder)}</ul>
         <div className="total">
           Total:
           <strong>{formatPrice(total)}</strong>
